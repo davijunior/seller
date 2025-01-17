@@ -26,16 +26,20 @@ const submit = () => {
 <template>
     <div class="border-b border-gray-900/10 p-6 flex items-center justify-center">
         <form @submit.prevent="submit" class="w-full">
-            <InputLabel for="quantity" value="Quantidade"/>
-            <TextInput id="quantity" type="number" v-model="form.quantity" required class="w-full"/>
-            <InputError class="mt-2" :message="form.errors.email" />
-            <div>
-                <InputLabel value="Oferta" />
-                <select class="w-2/3" id="prod_id" v-model="form.offer_id"> 
-                    <option v-for="offer in offers" :key="offer.id" :value="offer.id"> 
-                        {{ offer.title }} - {{ offer.id }}
-                    </option>
-                </select>
+            <div class="flex">
+                <div class="w-1/4 flex-col">
+                    <InputLabel for="quantity" value="Quantidade"/>
+                    <TextInput id="quantity" type="number" v-model="form.quantity" required class="w-full flex-col"/>
+                </div>
+                
+                <div class="w-3/4 flex-col">
+                    <InputLabel value="Oferta" />
+                    <select class="w-full" id="prod_id" v-model="form.offer_id"> 
+                        <option v-for="offer in offers" :key="offer.id" :value="offer.id"> 
+                            {{ offer.title }} - {{ offer.id }}
+                        </option>
+                    </select>
+                </div>
             </div>
             <PrimaryButton class="w-1/4 flex-col"> Cadastrar </PrimaryButton>
         </form>

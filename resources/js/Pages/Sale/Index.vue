@@ -19,9 +19,22 @@ const props = defineProps(['sales', 'offers']);
 
         <CreateSaleForm :offers="offers"></CreateSaleForm>
 
-        <div v-for="sale in sales">
-            <p>{{ sale.sale_date }} -[ {{ sale.offer_quantity }} x {{sale.offer.title}} ]</p>
-        </div>
+        <table class="table-fixed w-full">
+            <thead>
+                <tr>
+                    <th>Data</th>
+                    <th>Conteúdo da venda</th>
+                </tr>
+            </thead>
+            <tbody v-for="sale in sales">
+                <tr>
+                    <td class="text-center border">{{ sale.sale_date }}</td>
+                    <td class="text-center border">
+                        {{ sale.offer_quantity }}x {{sale.offer.title}} 
+                    </td>
+                </tr>
+            </tbody>
+        </table>
 
     </AuthenticatedLayout>
 </template>
