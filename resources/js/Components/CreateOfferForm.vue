@@ -50,25 +50,27 @@ const submit = () => {
             <InputLabel for="title" value="Titulo da Oferta"/>
             <TextInput id="title" type="text" v-model="form.title" required class="w-full"/>
             <InputError class="mt-2" :message="form.errors.email" />
-            <div>
+            <div class="w-full flex">
+            <div class="w-2/3">
                 <InputLabel value="Produto" />
-                <select class="w-2/3" id="prod_id"> 
+                <select class="w-full" id="prod_id"> 
                     <option v-for="p in products_list" :key="p.id" :value="p.id"> 
                         {{ p.title }}
                     </option>
                 </select>
             </div>
-            <div>
+            <div class="w-1/3">
                 <InputLabel value="Quantidade" />
-                <TextInput id="qty" type="number" class="w-full"/>
-
-                <button type="button" @click="addProductToOffer" class="inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-widest text-gray-700 shadow-sm transition duration-150 ease-in-out hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 disabled:opacity-25 dark:border-gray-500 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700 dark:focus:ring-offset-gray-800" > 
+                <TextInput id="qty" type="number" class="w-1/2"/>
+                <button type="button" @click="addProductToOffer" class="w-1/2 bg-blue-900 rounded-md border border-gray-300 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-gray-300 shadow-sm transition duration-150 ease-in-out hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 disabled:opacity-25 dark:border-gray-500 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700 dark:focus:ring-offset-gray-800" > 
                     Adicionar 
                 </button>
             </div>
-            <table class="table-fixed w-full">
+            
+        </div>
+            <table class="table-fixed w-full my-10">
                 <thead>
-                    <tr>
+                    <tr class="text-center border">
                         <th>Produto</th>
                         <th>Quantidade</th>
                         <th>Ações</th>

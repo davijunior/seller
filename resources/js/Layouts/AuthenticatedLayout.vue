@@ -12,7 +12,7 @@ const showingNavigationDropdown = ref(false);
 
 <template>
     <div>
-        <div class="min-h-screen bg-green-600 dark:bg-gray-900">
+        <div class="min-h-screen bg-green-600 dark:bg-gray-900 pb-10">
             <nav
                 class="bg-green-600 dark:bg-gray-800"
             >
@@ -233,7 +233,7 @@ const showingNavigationDropdown = ref(false);
             </header>
 
             <!-- Page Content -->
-            <main class="flex-grow border container mx-auto p-4 bg-gray-100 mt-10">
+            <main class="flex-grow border container mx-auto p-4 bg-gray-100 my-10 rounded">
                 <slot />
             </main>
 
