@@ -27,7 +27,7 @@ class SaleController extends Controller
 
     public function report(Request $request): Response {
         $report = $this->productReportService->generateSalesReport();
-
+        
         return Inertia::render('Sale/Report', [
             'report' => $report,
         ]);
